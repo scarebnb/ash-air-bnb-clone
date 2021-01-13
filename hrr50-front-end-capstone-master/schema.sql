@@ -4,7 +4,7 @@ USE airBnB;
 
 CREATE TABLE images(
   id INT AUTO_INCREMENT PRIMARY KEY,
-  listing text,
-  favorites number,
+  name text,
+  favorites INT NOT NULL,
   url text
 );
