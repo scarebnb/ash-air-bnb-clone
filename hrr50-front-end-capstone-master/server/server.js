@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const db = require('../database/index.js');
+const {retrieveOneProperty} = require('../database/index.js')
 
 const port = 8080
 const app = express();
@@ -11,6 +12,16 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
+})
+
+app.get('/photos', (req, res) => {
+  retrieveOneProperty(1, (err, results) => {
+    if (err) {
+      res.sendStatus(404)
+    } else {
+      res.send(results)
+    }
+  })
 })
 
 

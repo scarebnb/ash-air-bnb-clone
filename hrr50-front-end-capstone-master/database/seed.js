@@ -3,23 +3,23 @@ const {addPhotos, addProperties} = require('./index.js')
 
 // need to import my index.js functions into here so I can seed the database
 
-var randomPhoto = faker.image.city()
+const randomPhoto = faker.image.city()
 console.log(randomPhoto)
-var randomName = faker.random.word()
-var randomLocation = faker.address.city()
-var randomFavs = faker.random.number()
+const randomName = faker.random.word()
+const randomLocation = faker.address.city()
+const randomFavs = faker.random.number()
 
 
 
 
-var fillDatabase = () => {
+const fillDatabase = () => {
 
   //main outer loop for primary records
   for (var i = 2; i <= 101; i++) {
-    var randomName = faker.random.word()
-    var randomLocation = faker.address.city()
-    var randomFavs = faker.random.number()
-    var randomNumber = (min, max) => {
+    let randomName = faker.random.word()
+    let randomLocation = faker.address.city()
+    let randomFavs = faker.random.number()
+    let randomNumber = (min, max) => {
       min = Math.ceil(min);
       max = Math.floor(max);
 
