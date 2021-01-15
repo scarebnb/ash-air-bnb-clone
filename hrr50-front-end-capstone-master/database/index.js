@@ -16,9 +16,9 @@ con.connect(function(err) {
 
 
 //need to create functions to write to the database
-var addProperties = (name, favorites, callback) => {
+var addProperties = (name, location, favorites, callback) => {
   con.query(
-    'INSERT INTO Property (name, favorites) VALUES (?, ?)', [name, favorites], callback
+    'INSERT INTO Property (name, location, favorites) VALUES (?, ?, ?)', [name, location, favorites], callback
   );
 }
 

@@ -7,6 +7,7 @@ USE airBnB;
 CREATE TABLE `Property` (
   `id` INTEGER AUTO_INCREMENT,
   `name` CHAR(255) NULL DEFAULT NULL,
+  `location` CHAR(255) NULL DEFAULT NULL,
   `favorites` INTEGER NOT NULL,
   PRIMARY KEY (`id`)
 );
@@ -19,11 +20,11 @@ CREATE TABLE `Photos` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `Join` (
-  `id` INTEGER AUTO_INCREMENT,
-  `propertyID` INTEGER,
-  `photoID` INTEGER,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (propertyID) REFERENCES `Property`(`id`),
-  FOREIGN KEY (photoID) REFERENCES `Photos`(`id`)
-);
+-- CREATE TABLE `Join` (
+--   `id` INTEGER AUTO_INCREMENT,
+--   `propertyID` INTEGER,
+--   `photoID` INTEGER,
+--   PRIMARY KEY (`id`),
+--   FOREIGN KEY (propertyID) REFERENCES `Property`(`id`),
+--   FOREIGN KEY (photoID) REFERENCES `Photos`(`id`)
+-- );
