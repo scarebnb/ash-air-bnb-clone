@@ -19,12 +19,3 @@ CREATE TABLE `Photos` (
   `propertyID` INT,
   PRIMARY KEY (`id`)
 );
-
--- CREATE TABLE `Join` (
---   `id` INTEGER AUTO_INCREMENT,
---   `propertyID` INTEGER,
---   `photoID` INTEGER,
---   PRIMARY KEY (`id`),
---   FOREIGN KEY (propertyID) REFERENCES `Property`(`id`),
---   FOREIGN KEY (photoID) REFERENCES `Photos`(`id`)
--- );

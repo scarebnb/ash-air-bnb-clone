@@ -14,8 +14,6 @@ con.connect(function(err) {
   }
 })
 
-
-//need to create functions to write to the database
 const addProperties = (name, location, favorites, callback) => {
   con.query(
     'INSERT INTO Property (name, location, favorites) VALUES (?, ?, ?)', [name, location, favorites], callback
@@ -32,14 +30,7 @@ const retrieveOneProperty = (index, callback) => {
  con.query(
   `select property.name, property.location, property.favorites, photoURL from property join photos on property.id = photos.propertyID where property.id = ${index}`, callback
  )
-// con.query(
-//   `select * from photos where photos.propertyID = ${index}`, callback
-// )
 }
-
-// need to create functions to get contents from the database
-
-
 
 module.exports = {
   addPhotos,
