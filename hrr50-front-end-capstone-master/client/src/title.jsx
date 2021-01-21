@@ -26,6 +26,7 @@ font-family: 'Roboto', sans-serif;
 color: rgb(113, 113, 113);
 text-decoration: underline;
 cursor: pointer;
+display: inline;
 `;
 
 const Favorites = styled.span`
@@ -48,6 +49,7 @@ max-width: 16px;
 margin-top: 10px;
 margin-right: 5px;
 color: rgb(113, 113, 113);
+display: inline;
 `;
 
 const Add = styled.img`
@@ -56,6 +58,7 @@ max-width: 16px;
 margin-top: 10px;
 margin-right: 5px;
 float: right;
+display: inline;
 `;
 
 const Share = styled.img`
@@ -64,6 +67,7 @@ max-width: 16px;
 margin-top: 10px;
 margin-right: 5px;
 float: right;
+display: inline;
 `;
 
 const AddText = styled.span`
@@ -74,6 +78,7 @@ margin-left: 10px;
 margin-right: 10px;
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
+display: inline;
 `;
 
 const ShareText = styled.span`
@@ -84,6 +89,7 @@ margin-left: 10px;
 margin-right: 10px;
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
+display: inline;
 `;
 
 const Title = ({ property }) => {

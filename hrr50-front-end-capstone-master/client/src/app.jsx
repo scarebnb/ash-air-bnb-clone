@@ -17,8 +17,12 @@ class App extends React.Component {
       modalOpen: false,
       property: {},
       photos: [],
+      currentPhoto: 0,
     };
     this.renderImageContent = this.renderImageContent.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.nextPicture = this.nextPicture.bind(this);
+    this.prevPicture = this.prevPicture.bind(this);
   }
 
   componentDidMount() {
@@ -45,15 +49,40 @@ class App extends React.Component {
     });
   }
 
+  nextPicture() {
+    if (this.state.currentPhoto !== this.state.photos.length - 1) {
+      this.setState({
+        currentPhoto: this.state.currentPhoto + 1,
+      });
+    } else {
+      console.log('end of carousel, not a valid click');
+    }
+  }
+
+  prevPicture() {
+    if (this.state.currentPhoto !== 0) {
+      this.setState({
+        currentPhoto: this.state.currentPhoto - 1,
+      });
+    } else {
+      console.log('start of carousel, not a valid click');
+    }
+  }
+
   showModal() {
     this.setState({
-      modalOpen: true,
+      modalOpen: !this.state.modalOpen,
     });
+    if (this.state.modalOpen === true) {
+      this.setState({
+        currentPhoto: 0,
+      });
+    }
   }
 
   openModal(e, index) {
-    // this.setState({ currentIndex: index });
-    console.log("clicked!")
+    this.setState({ currentPhoto: index });
+    this.showModal();
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -82,7 +111,7 @@ class App extends React.Component {
             Show All Photos
           </button>
         </div>
-        <Modal photos={this.state.photos} modalOpen={this.state.modalOpen} />
+        <Modal currentPhoto={this.state.currentPhoto} photos={this.state.photos} modalOpen={this.state.modalOpen} showModal={this.showModal} nextPicture={this.nextPicture} prevPicture={this.prevPicture} />
       </div>
     );
   }
