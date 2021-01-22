@@ -81,7 +81,7 @@
 #submit {
   position: absolute;
   z-index: 3;
-  margin-left: 68%;
+  margin-left: 67%;
   margin-top: 21%;
   padding: 7px 15px;
   border-radius: 8px;
@@ -89,4 +89,5 @@
   font-weight: 400;
   cursor: pointer;
   background: white;
+  vertical-align: middle
 }

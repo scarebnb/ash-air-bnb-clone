@@ -14,7 +14,8 @@ import styled from 'styled-components';
 const Dots = styled.img`
   height: 15px;
   width: 15px;
-  margin-right: 5px;
+  margin: auto 5px 0px auto;
+
 `;
 
 class App extends React.Component {
@@ -115,6 +116,7 @@ class App extends React.Component {
             onClick={(e) => {
               this.showModal();
             }}>
+            <Dots src="https://lh3.googleusercontent.com/proxy/OiwrMASYxmaO5Rd647dux4b7P20fZ2R27FmMkvQABSyf5-OfTyhMXHxsb-NafVHnhZHD-WcLHBKaYzToZSmHTZ5LYj6cV_VzDPv_YkED1GeT"></Dots>
             Show All Photos
           </button>
         </div>
