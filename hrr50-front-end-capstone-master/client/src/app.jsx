@@ -9,6 +9,13 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Title from './title.jsx';
 import Modal from './modal.jsx';
+import styled from 'styled-components';
+
+const Dots = styled.img`
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+`;
 
 class App extends React.Component {
   constructor(props) {

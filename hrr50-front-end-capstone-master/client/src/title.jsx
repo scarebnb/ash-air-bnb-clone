@@ -50,6 +50,7 @@ margin-top: 10px;
 margin-right: 5px;
 color: rgb(113, 113, 113);
 display: inline;
+vertical-align: text-top;
 `;
 
 const Add = styled.img`
@@ -59,6 +60,7 @@ margin-top: 10px;
 margin-right: 5px;
 float: right;
 display: inline;
+vertical-align: text-top;
 `;
 
 const Share = styled.img`
@@ -68,6 +70,7 @@ margin-top: 10px;
 margin-right: 5px;
 float: right;
 display: inline;
+vertical-align: text-top;
 `;
 
 const AddText = styled.span`
