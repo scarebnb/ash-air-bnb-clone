@@ -3,29 +3,22 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const SlideUp = keyframes`
-from {
-  margin-top: 100%;
-  height: 300%;
-}
-
-to {
-  margin-top: 0%;
-  height: 100%;
-}
-`;
-
-const SlideOut = keyframes`
-from {
-  margin-top: 0%;
-  height: 100%;
-}
-
-to {
-  margin-top: 100%;
-  height: 300%;
-}
-`;
+const Modal = (props) => (
+  <PopUp modalOpen={props.modalOpen}>
+    <Close onClick={(e) => { props.showModal(); }}>X Close</Close>
+    <Position>
+      {props.currentPhoto + 1}
+      {' '}
+      /
+      {props.photos.length}
+    </Position>
+    <Add src="https://cdn2.iconfinder.com/data/icons/4web-3/139/favourite-512.png" />
+    <Share src="https://www.pngfind.com/pngs/m/78-782308_png-file-share-icon-ios-png-transparent-png.png" />
+    {props.currentPhoto === 0 ? null : (<Previous onClick={props.prevPicture}>{'<'}</Previous>)}
+    <Display src={props.photos[props.currentPhoto]} />
+    {props.currentPhoto === props.photos.length - 1 ? null : (<Next onClick={props.nextPicture}>{'>'}</Next>)}
+  </PopUp>
+);
 
 const PopUp = styled.div`
   display: grid;
@@ -34,7 +27,14 @@ const PopUp = styled.div`
   grid-gap: 0px;
   z-index: 5;
   position: absolute;
-  top: 0%;
+  top: ${(props) => {
+    if (props.modalOpen === false) {
+      return '100%';
+    }
+    return '0';
+  }};
+  transition-property: top, opacity;
+  transition-duration: 500ms;
   left: 0%;
   background-color: white;
   width: 2000px;
@@ -42,7 +42,12 @@ const PopUp = styled.div`
   height: 1000px;
   max-height: 100vh;
   overflow: visible;
-  animation: 500ms ${(props) => props.modalOpen === false ? SlideOut : SlideUp};
+  opacity: ${(props) => {
+    if (props.modalOpen === false) {
+      return '0';
+    }
+    return '1';
+  }};
 `;
 
 const FadeIn = keyframes`
@@ -149,27 +154,5 @@ margin: 0 auto 0 auto;
 max-height: 60vh;
 animation: ${FadeIn} ease 2s;
 `;
-
-const Modal = (props) => {
-  if (props.modalOpen === false) {
-    return null;
-  }
-
-  // ternary condition
-
-  return (
-    <PopUp>
-      <Close onClick={(e) => {props.showModal()}}>X Close</Close>
-      <Position>
-        {props.currentPhoto + 1} / {props.photos.length}
-      </Position>
-      <Add src="https://cdn2.iconfinder.com/data/icons/4web-3/139/favourite-512.png"></Add>
-      <Share src="https://www.pngfind.com/pngs/m/78-782308_png-file-share-icon-ios-png-transparent-png.png"></Share>
-      {props.currentPhoto === 0 ? null : (<Previous onClick={props.prevPicture}>{'<'}</Previous>)}
-      <Display src={props.photos[props.currentPhoto]}></Display>
-      {props.currentPhoto === props.photos.length -1 ? null : (<Next onClick={props.nextPicture}>{'>'}</Next>)}
-    </PopUp>
-  );
-};
 
 export default Modal;

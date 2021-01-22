@@ -1,6 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Title = ({ property }) => (
+  <Info>
+    {property.name}
+    <div>
+      <FavIcon src="https://www.shareicon.net/data/2015/10/06/651855_favorite_512x512.png" />
+      <Favorites>{property.favorites}</Favorites>
+      <Location>{property.location}</Location>
+      <AddText>Save</AddText>
+      <Add src="https://cdn2.iconfinder.com/data/icons/4web-3/139/favourite-512.png" />
+      <ShareText>Share</ShareText>
+      <Share src="https://www.pngfind.com/pngs/m/78-782308_png-file-share-icon-ios-png-transparent-png.png" />
+    </div>
+  </Info>
+);
+
 const Info = styled.div`
 margin-left: auto;
 margin-right: auto;
@@ -94,22 +109,5 @@ font-family: 'Roboto', sans-serif;
 font-weight: 400;
 display: inline;
 `;
-
-const Title = ({ property }) => {
-  return (
-    <Info>
-      {property.name}
-      <div>
-        <FavIcon src="https://www.shareicon.net/data/2015/10/06/651855_favorite_512x512.png"></FavIcon>
-        <Favorites>{property.favorites}</Favorites>
-        <Location>{property.location}</Location>
-        <AddText>Save</AddText>
-        <Add src="https://cdn2.iconfinder.com/data/icons/4web-3/139/favourite-512.png"></Add>
-        <ShareText>Share</ShareText>
-        <Share src="https://www.pngfind.com/pngs/m/78-782308_png-file-share-icon-ios-png-transparent-png.png"></Share>
-      </div>
-    </Info>
-  );
-};
 
 export default Title;
