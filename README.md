@@ -19,4 +19,4 @@ mysql -u root <schema.sql
 To Seed Database:
 npm run seed
 
-Navigate in your browser to localhost:8080 to see the page
+Navigate in your browser to localhost:3000 to see the page
