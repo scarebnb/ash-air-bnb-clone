@@ -7,8 +7,8 @@ const port = 3000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
-app.use('/bundle', express.static(`${__dirname}/../client/public/index.js`));
-app.use(cors({origin: ‘http://localhost:8000'}));
+app.use('/bundle', express.static(`${__dirname}/../client/public/app.js`));
+app.use(cors({origin: 'http://localhost:8000'}));
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
