@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import Title from './title.jsx';
 import Modal from './modal.jsx';
 
-class App extends React.Component {
+class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,9 +75,11 @@ class App extends React.Component {
       modalOpen: !this.state.modalOpen,
     });
     if (this.state.modalOpen === true) {
-      this.setState({
-        currentPhoto: 0,
-      });
+      setTimeout(() => {
+        this.setState({
+          currentPhoto: 0,
+        });
+      }, 600);
     }
   }
 
@@ -243,4 +245,4 @@ position: relative;
   background-color: black;
 `;
 
-ReactDOM.render(<div><App /></div>, document.getElementById('photos'));
+ReactDOM.render(<div><Gallery /></div>, document.getElementById('photos'));

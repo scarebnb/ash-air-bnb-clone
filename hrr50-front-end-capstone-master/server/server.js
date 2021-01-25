@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const { retrieveOneProperty } = require('../database/index.js');
 
-const port = 8080;
+const port = 3000;
 const app = express();
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use('/bundle', express.static(`${__dirname}/../client/public/index.js`));
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
