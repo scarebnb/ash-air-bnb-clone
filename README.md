@@ -10,6 +10,9 @@ Property Photo Gallery
 To Run Server:
 npm start
 
+To Run Server in Dev Mode:
+npm start dev
+
 To Run Webpack:
 npm run watch
 

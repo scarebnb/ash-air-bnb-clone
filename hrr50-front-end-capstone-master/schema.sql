@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS airBnB;
-CREATE DATABASE airBnB;
+DROP DATABASE IF EXISTS PhotoGallery;
+CREATE DATABASE PhotoGallery;
 
-USE airBnB;
+USE PhotoGallery;
 
 
 CREATE TABLE `Property` (
