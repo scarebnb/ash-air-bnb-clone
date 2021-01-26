@@ -124,6 +124,7 @@ class Gallery extends React.Component {
 
 const Grid = styled.div`
   display: grid;
+  position: relative;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 50% 50%;
   grid-gap: 8px;
@@ -153,9 +154,13 @@ const Photos = styled.img`
 
 const Submit = styled.button`
   position: absolute;
+  grid-column-start: 4;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 1;
   z-index: 3;
-  margin-left: 58vw;
-  margin-top: 40vh;
+  margin-left: 29%;
+  margin-top: 40%;
   padding: 7px 15px;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
