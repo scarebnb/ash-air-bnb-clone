@@ -17,7 +17,7 @@ To Run Webpack:
 npm run watch
 
 To Create Database:
-mysql -u root <schema.sql
+mysql -u ash -p <schema.sql
 
 To Seed Database:
 npm run seed
