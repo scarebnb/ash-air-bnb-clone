@@ -154,8 +154,8 @@ const Photos = styled.img`
 const Submit = styled.button`
   position: absolute;
   z-index: 3;
-  margin-left: 67vw;
-  margin-top: 48vh;
+  margin-left: 58vw;
+  margin-top: 40vh;
   padding: 7px 15px;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
