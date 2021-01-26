@@ -25,7 +25,12 @@ const PopUp = styled.div`
   grid-template-columns: 40px 40px 20px auto auto auto auto auto auto auto 20px 40px 40px;
   grid-template-rows: auto auto auto auto auto auto auto;
   grid-gap: 0px;
-  z-index: 5;
+  z-index: ${(props) => {
+    if (props.modalOpen === false) {
+      return '-5';
+    }
+    return '5';
+  }};;
   position: absolute;
   top: ${(props) => {
     if (props.modalOpen === false) {
