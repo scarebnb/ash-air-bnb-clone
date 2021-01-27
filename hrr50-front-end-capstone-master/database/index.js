@@ -29,7 +29,7 @@ const addPhotos = (photoURL, id, callback) => {
 
 const retrieveOneProperty = (index, callback) => {
   con.query(
-    `select property.name, property.location, property.favorites, photoURL from property join photos on property.id = photos.propertyID where property.id = ${index}`, callback,
+    `select Property.name, Property.location, Property.favorites, photoURL from Property join Photos on Property.id = Photos.propertyID where Property.id = ${index}`, callback,
   );
 };
 
