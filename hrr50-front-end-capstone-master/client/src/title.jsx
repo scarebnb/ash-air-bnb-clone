@@ -76,6 +76,7 @@ margin-right: 5px;
 float: right;
 display: inline;
 vertical-align: text-top;
+cursor: pointer;
 `;
 
 const Share = styled.img`
@@ -86,6 +87,7 @@ margin-right: 5px;
 float: right;
 display: inline;
 vertical-align: text-top;
+cursor: pointer;
 `;
 
 const AddText = styled.span`
@@ -97,6 +99,7 @@ margin-right: 10px;
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
 display: inline;
+cursor: pointer;
 `;
 
 const ShareText = styled.span`
@@ -108,6 +111,7 @@ margin-right: 10px;
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
 display: inline;
+cursor: pointer;
 `;
 
 export default Title;

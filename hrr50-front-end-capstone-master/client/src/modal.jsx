@@ -27,8 +27,7 @@ const PopUp = styled.div`
   grid-gap: 0px;
   z-index: ${(props) => {
     if (props.modalOpen === false) {
-      setTimeout(function()
-      { return -5; }, 1000);
+      setTimeout(() => { return -5; }, 1000);
     }
     return '5';
   }};;
@@ -75,6 +74,7 @@ const Close = styled.button`
   background-color: light gray;
   border: none;
   vertical-align: bottom;
+  cursor: pointer;
 `;
 
 const Position = styled.span`
@@ -137,6 +137,7 @@ grid-row-start: 2;
 grid-row-end: span 1;
 color: rgb(113, 113, 113);
 display: inline;
+cursor: pointer;
 `;
 
 const Share = styled.img`
@@ -148,6 +149,7 @@ max-height: 16px;
 max-width: 16px;
 margin: auto;
 display: inline;
+cursor: pointer;
 `;
 
 const Display = styled.img`
