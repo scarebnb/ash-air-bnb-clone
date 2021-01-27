@@ -29,7 +29,7 @@ class Gallery extends React.Component {
   componentDidMount() {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/photos',
+      url: '/photos',
     }).then((data) => {
       const photoArray = [];
       const property = {
