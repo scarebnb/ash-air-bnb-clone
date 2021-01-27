@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.get('/photos', (req, res) => {
   retrieveOneProperty(1, (err, results) => {
     if (err) {
-      res.send('hello');
+      res.send(err);
     } else {
       res.send(results);
     }
