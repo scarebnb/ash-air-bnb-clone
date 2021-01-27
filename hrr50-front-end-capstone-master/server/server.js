@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.send('Hello from the server!');
 });
 
-app.get('/photos', (req, res) => {
+app.get('/photos', cors(), (req, res) => {
   retrieveOneProperty(1, (err, results) => {
     if (err) {
       res.send(err);
