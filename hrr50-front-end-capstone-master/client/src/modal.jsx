@@ -27,7 +27,8 @@ const PopUp = styled.div`
   grid-gap: 0px;
   z-index: ${(props) => {
     if (props.modalOpen === false) {
-      return '-5';
+      setTimeout(function()
+      { return -5; }, 1000);
     }
     return '5';
   }};;
