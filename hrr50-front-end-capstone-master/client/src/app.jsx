@@ -92,6 +92,7 @@ class Gallery extends React.Component {
   renderImageContent(src, index) {
     return (
       <GalleryChild
+        key={index}
         index={index}
         onClick={(e) => this.openModal(e, index)}
       >
