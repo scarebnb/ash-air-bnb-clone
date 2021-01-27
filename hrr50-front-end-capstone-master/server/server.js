@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -10,7 +11,7 @@ const app = express();
 app.use(compression());
 app.use('/', express.static(path.join(__dirname, '..', 'public')));
 app.use(cors({ origin: 'http://localhost:8000' }));
-app.use(cors());
+app.use(cors('/photos', express.static(path.join(_dirname, '..', 'client'))));
 app.use('/bundle', express.static(path.join(__dirname, '..', 'public/app.js')));
 
 app.get('/', (req, res) => {
